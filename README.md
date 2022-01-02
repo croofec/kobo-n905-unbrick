@@ -38,17 +38,25 @@ after that let’s try recovery your kobo:
 
 ![](https://raw.githubusercontent.com/croofec/kobo-n905-unbrick/main/screens/screen4.png)
 
+`setenv bootargs_base 'setenv bootargs console=ttymxc0,115200 rootfstype=ext4 rootwait rw video=mxcepdcfb:E60_V220 lpj=3997696'`
+
+
+`setenv bootcmd_croofec 'run bootargs_base bootargs_recovery;mmc read 0 0x70800000 0x0 0x1800; bootm'`
+
+
+`saveenv`
+
 The first-line disabled quite mode for kernel, the second read kernel from your sdcard and run recovery mode.
 
 now just run
 
 ![](https://raw.githubusercontent.com/croofec/kobo-n905-unbrick/main/screens/screen5.png)
 
+`run bootcmd_croofec`
+
 after that, you will see a lot of debugging information from the kernel and blinking blue led on the kobo device.
 
 Restart and enjoy!
 
 ![](https://raw.githubusercontent.com/croofec/kobo-n905-unbrick/main/screens/screen6.jpg)
-
-
 After that of course you need to hack again kobo for custom installation.
