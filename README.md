@@ -32,7 +32,9 @@ then just change boot delay:
 
 ![](https://raw.githubusercontent.com/croofec/kobo-n905-unbrick/main/screens/screen3.png)
 
+`saveenv bootdelay 10`
 
+`saveenv`
 
 after that let’s try recovery your kobo:
 
